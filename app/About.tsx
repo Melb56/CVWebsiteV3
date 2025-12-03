@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import '../styles/about.css';
+import './styles/about.css';
 
 export default function About() {
   return (

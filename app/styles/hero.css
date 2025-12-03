@@ -1,5 +1,6 @@
 #typed-output {
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Angelina', sans-serif;
     color: var(--color2);
     font-size: 24px;
     height: 100px;

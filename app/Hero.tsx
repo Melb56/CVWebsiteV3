@@ -3,8 +3,8 @@
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import Image from 'next/image';
-import '../styles/hero.css';
-import Linkedin from './Linkedin';
+import './styles/hero.css';
+import Linkedin from './components/Linkedin';
 
 const Hero: React.FC = () => {
   const typedRef = useRef<HTMLDivElement>(null)

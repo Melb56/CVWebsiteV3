@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import '../styles/portfolio.css';
+import './styles/portfolio.css';
 import { useState } from 'react';
-import Overlay from './Overlay';
+import Overlay from './components/Overlay';
 import Image from 'next/image';
 
 const Portfolio: React.FC = () => {

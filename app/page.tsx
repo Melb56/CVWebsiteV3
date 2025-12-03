@@ -3,12 +3,12 @@ import './styles/globals.css';
 import './styles/button.css';
 import './styles/linkedin.css';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
+import Hero from './Hero';
+import About from './About';
+import Skills from './Skills';
+import Experience from './Experience';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
 import Footer from './components/Footer';
 import Arrow from './components/Arrow';
 

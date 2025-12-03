@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image';
-import '../styles/skills.css';
+import './styles/skills.css';
 
 const Skills: React.FC = () => {
 

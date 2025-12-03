@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React from 'react'
-import '../styles/experience.css'
+import './styles/experience.css'
 
 const Experience: React.FC = () => {
   return (

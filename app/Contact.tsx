@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react';
-import '../styles/contact.css';
-import ContactForm from './ContactForm';
+import './styles/contact.css';
+import ContactForm from './components/ContactForm';
 
 
 const Contact: React.FC = () => {
