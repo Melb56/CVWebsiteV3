@@ -8,10 +8,11 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="fade-in">
       <div className="container-exp">
-        <h1 data-aos="fade-down" data-aos-duration="1500">Parcours</h1>
+        <h1 data-aos="fade-down" data-aos-duration="1500">Mon Parcours</h1>
 
       {/* Expériences professionnelles */}
         <div className="experience" data-aos="fade-right" data-aos-duration="1500">
+
           <div className="title-exp">
             <div>
               <Image
@@ -94,7 +95,7 @@ const Experience: React.FC = () => {
 
           <div className="container-pro transition duration-500 transform hover:scale-120 hover:shadow-xl">
             <h5>STUDI</h5>
-            <p className="date">Septembre 2024 à Décembre 2023</p>
+            <p className="date">Septembre 2022 à Décembre 2023</p>
             <p className="diploma">Graduate Développeur web full stack (obtenu)</p>
             <p>
               Enseignement des compétences pour créer et maintenir un site web,

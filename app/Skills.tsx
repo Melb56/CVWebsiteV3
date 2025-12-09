@@ -190,7 +190,7 @@ const Skills: React.FC = () => {
 
           {/* Outils & Platformes */}
         <div className='container-skills' data-aos="fade-right" data-aos-duration="1500">
-          <h2>Outils & Platformes</h2>
+          <h2>Outils & Plateformes</h2>
           <p>Versionnage des projet, création de maquettes et de prototypes, responsives et centrées utilisateur, création et édition de thèmes Wordpress. </p>
           <div className='container-img fbop'>
             <div className='image'>
