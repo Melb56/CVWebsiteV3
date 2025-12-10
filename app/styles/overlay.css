@@ -5,7 +5,6 @@
 .overlay-projet {
   position: fixed;
   inset: 0;
-  /* background: rgba(26, 26, 26, .5); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,14 +17,12 @@
   transition: 
     opacity var(--overlay-transition) ease, 
     transform var(--overlay-transition) ease,
-    background var(--overlay-transition) ease;
 }
 
 .overlay-projet.show {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
-  /* background:  rgba(165, 204, 255, .5); */
 }
 
 .content {
@@ -37,8 +34,8 @@
   background-color: var(--color4);
   padding: 2rem;
   border-radius: 10px;
-  max-width: 500px;
-  max-height: 90vh;
+  max-width: 100vh;
+  max-height: 100vh;
   overflow-y: auto;  
   position: relative;
   transform: translateY(0);

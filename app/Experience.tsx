@@ -32,47 +32,53 @@ const Experience: React.FC = () => {
             <h5>Développeuse Web Freelance</h5>
             <p className="date">Mai 2025 à maintenant</p>
             <ul>
-              <li>Réalisation et maintenance de sites web</li>
-              <li>Intégration de maquette responsive</li>
-              <li>Gestion du contenu</li>
-              <li>Hébergement</li>
+              <li>Conception et développement de sites web modernes et responsives.</li>
+              <li>Intégration de maquettes UI/UX.</li>
+              <li>Optimisation des performances et SEO.</li>
+              <li>Maintenance et gestion de contenu.</li>
+              <li>Déploiement sur OVH ou Vercel.</li>
             </ul>
           </div>
 
           <div className="container-pro transition duration-500 transform hover:scale-120 hover:shadow-xl">
-            <h5>Association Avenir Solidarité Emploi, Kervignac</h5>
+            <h5>Agent polyvalent</h5>
+            <p>Association Avenir Solidarité Emploi, Kervignac</p>
             <p className="date">Novembre 2022 à août 2024 et étés 2021, 2020, 2019 et 2018</p>
             <ul>
-              <li>Employée de ménage chez les particuliers, entreprises, cabinets et écoles.</li>
-              <li>ASEM en Moyenne et Grande section, école St Anne Kervignac</li>
-              <li>Agent des écoles : surveillance des enfants sur l&apos;heure du midi</li>
-              <li>Distribution de prospectus</li>
+              <li>Assurer l’entretien et le nettoyage chez des particuliers, en entreprises, cabinets et écoles.</li>
+              <li>Accompagner et encadrer les élèves de Moyenne et Grande Section en tant qu’ASEM.</li>
+              <li>Surveiller les enfants pendant le temps du midi en tant qu’agent des écoles.</li>
+              <li>Distribuer des prospectus pour des campagnes de communication.</li>
             </ul>
           </div>
 
           <div className="container-pro transition duration-500 transform hover:scale-120 hover:shadow-xl">
-            <h5>CAP Lorient, Lanester</h5>
+            <h5>Ripeur</h5>
+            <p>Lorient Agglomération, Lanester</p>
             <p className="date">Été 2019</p>
             <ul>
-              <li>Ripeur : collecte des poubelles</li>
+              <li>Assurer la collecte des poubelles</li>
             </ul>
           </div>
 
           <div className="container-pro transition duration-500 transform hover:scale-120 hover:shadow-xl">
-            <h5>Cité Marine, Kervignac</h5>
+            <h5>Agent de conditionnement </h5>
+            <p>Cité Marine, Kervignac</p>
             <p className="date">Été 2017</p>
             <ul>
-              <li>Agent de conditionnement : mettre les aliments dans les barquettes et les cartons</li>
+              <li>Conditionner les aliments en barquettes et en cartons.</li>
             </ul>
           </div>
 
           <div className="container-pro transition duration-500 transform hover:scale-120 hover:shadow-xl">
-            <h5>Camping municipal, Port-Louis</h5>
+            <h5>Adjoint administratif </h5>
+            <p>Camping municipal, Port-Louis</p>
             <p className="date">Été 2015</p>
-            <p>Adjoint administratif :</p>
             <ul>
-              <li>Accueil et placement des clients</li>
-              <li>Facturation des séjours</li>
+              <li>Accueillir les clients, gérer leur installation et veiller à la qualité de leur séjour.</li>
+              <li>Gérer la facturation des séjours, les encaissements et le suivi administratif.</li>
+              <li>Accueillir et installer les clients.</li>
+              <li>Assurer la facturation des séjours.</li>
             </ul>
           </div>
         </div>

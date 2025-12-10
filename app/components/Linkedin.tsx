@@ -5,7 +5,7 @@ const Linkedin: React.FC = () => {
   return (
     <div>
         <a
-            href="https://fr.linkedin.com/in/melaniebruzac"
+            href="https://www.linkedin.com/in/melaniebruzac/"
             target="_blank"
             rel="noopener noreferrer"
         >

@@ -37,8 +37,8 @@ Curieuse, autonome et toujours prête à apprendre, j’aime les environnements 
         <div className="btnAbout">
           <a
             className="btn"
-            href="/CV_DevFront_MelanieBruzac.pdf"
-            download="CV-DevWeb_MelanieBruzac.pdf"
+            href="/CV_MelanieBruzac.pdf"
+            download="CV_MelanieBruzac.pdf"
             data-aos ="fade-left" 
           >
             Télécharger mon CV

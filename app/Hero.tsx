@@ -41,8 +41,8 @@ const Hero: React.FC = () => {
 
         <a
           className="btn"
-          href="/CV_DevFront_MelanieBruzac.pdf"
-          download="CV-DevWeb_MelanieBruzac.pdf"
+          href="/CV_MelanieBruzac.pdf"
+          download="CV_MelanieBruzac.pdf"
         >
           Télécharger mon CV
         </a>

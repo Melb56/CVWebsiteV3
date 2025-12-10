@@ -5,10 +5,22 @@ import './styles/portfolio.css';
 import { useState } from 'react';
 import Overlay from './components/Overlay';
 import Image from 'next/image';
+import { useEffect, useRef } from "react";
 
 const Portfolio: React.FC = () => {
      const [isOpen, setIsOpen] = useState(false);
      const [selectedProject, setSelectedProject] = useState<string | null>(null);
+     const projectRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+    if (selectedProject && projectRef.current) {
+        projectRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // centre verticalement
+        inline: "center", // centre horizontalement si horizontal scroll
+        });
+    }
+    }, [selectedProject]);
 
   return (
     <section id="portfolio">
@@ -16,7 +28,7 @@ const Portfolio: React.FC = () => {
 
         <div className='card-container' data-aos="fade-right" data-aos-duration="1500">
 
-            <div className='flotti' data-category="front">
+            <div className='osteo'>
                 <div className="card" id="Osteo" >
                     <div className="intro">
                         <h4>Otéopathe Charlotte Tanguy</h4>
@@ -36,42 +48,44 @@ const Portfolio: React.FC = () => {
                 <div>
                     {selectedProject === "osteo" && (
                         <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Ostéopathe Charlotte Tanguy</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/osteoCT.png"
-                                    alt="Photo de profil"
-                                    width={500}
-                                    height={100}
-                                />
+                            <div className="projet-card" ref={projectRef}>
+                                <h2>Ostéopathe Charlotte Tanguy</h2>
+                                <div className='portfolio-img'>
+                                    <Image
+                                        src="/img/Portfolio/OsteoCT.png"
+                                        alt="Photo de profil"
+                                        width={500}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className='tags'>
+                                    <p>Refonte complète du site vitrine d’une ostéopathe basée à Locmiquélic, avec pour objectif d’améliorer la visibilité en ligne et l’expérience utilisateur.</p>
+                                    <li>Wordpress</li>
+                                    <li>CSS</li> 
+                                </div>
+                                <ul className='tasks'>
+                                    <li>Analyse des besoins</li>
+                                    <li>Elaboration d&apos;une maquette responsive</li>
+                                    <li>Personnalisation complète d&apos;un thème Wordpress</li>
+                                    <li>Développement du front</li>
+                                    <li>Gestion du contenu</li>
+                                    <li>Hébergement</li>
+                                    <li>Mise en ligne</li>
+                                </ul>
+                                <div className="btn-projet">
+                                    <button>
+                                        <a href="https://osteopathe-tanguy-locmiquelic.fr/" target="_blank" rel="noreferrer">
+                                            Voir le site
+                                        </a>
+                                    </button>
+                                </div>
                             </div>
-                            <div className='tags'>
-                                <li>Wordpress</li>
-                                <li>CSS</li> 
-                            </div>
-                            <ul className='tasks'>
-                                <li>Analyse des besoins</li>
-                                <li>Elaboration d&apos;une maquette responsive</li>
-                                <li>Personnalisation complète d&apos;un thème Wordpress</li>
-                                <li>Développement du front</li>
-                                <li>Gestion du contenu</li>
-                                <li>Hébergement</li>
-                                <li>Mise en ligne</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://osteopathe-tanguy-locmiquelic.fr/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
-                        
                         </Overlay>
                     )}     
                 </div>
             </div>
             
-            <div className='daily' data-category="fullstack">
+            <div className='daily'>
                 <div className="card" id="dailybooks">
                     <div className="intro">
                         <h4>Daily Books</h4>
@@ -92,40 +106,43 @@ const Portfolio: React.FC = () => {
                 <div>
                     {selectedProject === "daily" && (
                         <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Daily Books</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/LogoDB.png"
-                                    alt="Photo de profil"
-                                    width={500}
-                                    height={100}
-                                />
-                            </div>
-                            <div className='tags'>
-                                <li>Next.js</li>
-                                <li>Prisma</li>
-                                <li>SASS</li>
-                            </div>
-                            <ul className='tasks'>
-                                <li>Elaboration d&apos;une maquette responsive</li>
-                                <li>Developpement d&apos;une BD avec Prisma (MySQL)</li>
-                                <li>Installation d&apos;une authentification avec Nextauth.js</li>
-                                <li>Développement du front.</li>
-                                <li>Mise en ligne sur Vercel.</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://daily-books.vercel.app/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
+                            <div className="projet-card" ref={projectRef}>
+                                <h2>Daily Books</h2>
+                                <div className='portfolio-img'>
+                                    <Image
+                                        src="/img/Portfolio/LogoDB.png"
+                                        alt="Photo de profil"
+                                        width={200}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className='tags'>
+                                    <p>Daily Books est une application web développée avec Next.js et Prisma, permettant aux utilisateurs de créer un compte pour gérer leur propre répertoire de livres. L’application offre la possibilité d’ajouter, modifier et supprimer des livres, avec un système de filtrage par thème. Des fonctionnalités avancées sont également en cours de développement, comme les listes de souhaits (à lire, favoris, à relire, etc.).</p>
+                                    <li>Next.js</li>
+                                    <li>Prisma</li>
+                                    <li>SASS</li>
+                                </div>
+                                <ul className='tasks'>
+                                    <li>Elaboration d&apos;une maquette responsive</li>
+                                    <li>Developpement d&apos;une BD avec Prisma (MySQL)</li>
+                                    <li>Installation d&apos;une authentification avec Nextauth.js</li>
+                                    <li>Développement du front.</li>
+                                    <li>Mise en ligne sur Vercel.</li>
+                                </ul>
+                                <div className="btn-projet">
+                                    <button>
+                                        <a href="https://daily-books.vercel.app/" target="_blank" rel="noreferrer">
+                                            Voir le site
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>  
                         </Overlay>
                     )}     
                 </div>
             </div>
             
-            <div className='flotti' data-category="front">
+            <div className='flotti'>
                 <div className="card" id="Flotti" >
                     <div className="intro">
                         <h4>Flottibulle</h4>
@@ -145,49 +162,52 @@ const Portfolio: React.FC = () => {
                 <div>
                     {selectedProject === "flotti" && (
                         <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Flottibulle</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/Flotti.png"
-                                    alt="Photo de profil"
-                                    width={500}
-                                    height={100}
-                                />
+                            <div className="projet-card" ref={projectRef}>
+                                <h2>Flottibulle</h2>
+                                <div className='portfolio-img'>
+                                    <Image
+                                        src="/img/Portfolio/Flotti.png"
+                                        alt="Photo de profil"
+                                        width={500}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className='tags'>
+                                    <p>Création du site vitrine WordPress pour Flottibulle, une école de natation située en Bretagne, avec pour objectif de valoriser l’activité, faciliter la prise d’informations et renforcer la présence en ligne.</p>
+                                    <li>Wordpress</li>
+                                    <li>CSS</li> 
+                                </div>
+                                <ul className='tasks'>
+                                    <li>Analyse des besoins</li>
+                                    <li>Elaboration d&apos;une maquette responsive</li>
+                                    <li>Personnalisation complète d&apos;un thème Wordpress</li>
+                                    <li>Développement du front</li>
+                                    <li>Mise en ligne</li>
+                                    <li>Formation du client à l’interface admin</li>
+                                </ul>
+                                <div className="btn-projet">
+                                    <button>
+                                        <a href="https://flottibulle.fr/" target="_blank" rel="noreferrer">
+                                            Voir le site
+                                        </a>
+                                    </button>
+                                </div>                                
                             </div>
-                            <div className='tags'>
-                                <li>Wordpress</li>
-                                <li>CSS</li> 
-                            </div>
-                            <ul className='tasks'>
-                                <li>Analyse des besoins</li>
-                                <li>Elaboration d&apos;une maquette responsive</li>
-                                <li>Personnalisation complète d&apos;un thème Wordpress</li>
-                                <li>Développement du front</li>
-                                <li>Mise en ligne</li>
-                                <li>Formation du client à l’interface admin</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://flottibulle.fr/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
+
                         
                         </Overlay>
                     )}     
                 </div>
             </div>
 
-            <div className='MB3' data-category="front">
+            <div className='MB3'>
                 <div className="card" id="MB3">
                     <div className="intro">
                         <h4>Mon CV en ligne - version actuelle</h4>
                         <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
                             <li>Next.js</li>
+                            <li>Tailwind</li>
+                            <li>CSS</li>
                     </div>
                         <div className='btnPlus'>
                             <button className="see-more-btn" onClick={() => setSelectedProject("MB3")}>
@@ -200,47 +220,49 @@ const Portfolio: React.FC = () => {
                 <div>
                     {selectedProject === "MB3" && (
                         <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Mon CV en ligne</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/LogoMB3.png"
-                                    alt="CV1"
-                                    width={500}
-                                    height={50}
-                                />
+                            <div className="projet-card" ref={projectRef}>
+                                <h2>Mon CV en ligne</h2>
+                                <div className='portfolio-img'>
+                                    <Image
+                                        src="/img/Portfolio/CvVersion2.png"
+                                        alt="CV1"
+                                        width={500}
+                                        height={50}
+                                    />
+                                </div>
+                                <div className='tags'>
+                                    <p>Refonte complète de mon CV en ligne, développée en Next.js, avec pour objectif de proposer une présentation claire, moderne et responsive de mon profil, de mes compétences et de mes projets, tout en optimisant l’expérience utilisateur.</p>
+                                    <li>Next.js</li>
+                                    <li>Tailwind</li>
+                                    <li>CSS</li>
+                                </div>
+                                <ul className='tasks'>
+                                    <li>Elaboration d&apos;une maquette responsive.</li>
+                                    <li>Développement du front</li>
+                                    <li>Mise en ligne</li>
+                                </ul>
+                                <div className="btn-projet">
+                                    <button>
+                                        <a href="https://melanie-bruzac.fr/" target="_blank" rel="noreferrer">
+                                            Voir le site
+                                        </a>
+                                    </button>
+                                </div>                                
                             </div>
-                            <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
-                            <li>Next.js</li>
-                            </div>
-                            <ul className='tasks'>
-                                <li>Elaboration d&apos;une maquette responsive.</li>
-                                <li>Développement du front</li>
-                                <li>Mise en ligne</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://melanie-bruzac.fr/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
+
                         </Overlay>
                     )}     
                 </div>
             </div>
 
-            <div className='MB' data-category="front">
+            <div className='MB'>
                 <div className="card" id="MB">
                     <div className="intro">
                         <h4>Mon CV en ligne - version 2</h4>
                         <div className='tags'>
-                            <li>HTML</li>
+                            <li>JavaScript</li>
                             <li>CSS</li>
                             <li>Bootstrap</li>
-                            <li>JavaScript</li>
                     </div>
                     <div className='btnPlus'>
                         <button className="see-more-btn" onClick={() => setSelectedProject("MB")}>
@@ -253,101 +275,49 @@ const Portfolio: React.FC = () => {
                 <div>
                     {selectedProject === "MB" && (
                         <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Mon CV en ligne</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/MB2.png"
-                                    alt="CV2"
-                                    width={500}
-                                    height={100}
-                                />
+                            <div className="projet-card" ref={projectRef}>
+                                <h2>Mon CV en ligne</h2>
+                                <div className='portfolio-img'>
+                                    <Image
+                                        src="/img/Portfolio/MB2.png"
+                                        alt="CV2"
+                                        width={500}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className='tags'>
+                                    <p>Création de la première version de mon CV en ligne en HTML, CSS et JavaScript, avec pour objectifs de gagner en visibilité, de présenter mes projets et de me démarquer en tant que développeuse front-end.</p>
+                                    <li>JavaScript</li>
+                                    <li>CSS</li>
+                                    <li>Bootstrap</li>
+                                </div>
+                                <ul className='tasks'>
+                                    <li>Elaboration d&apos;une maquette responsive.</li>
+                                    <li>Développement du front</li>
+                                    <li>Mise en ligne</li>
+                                </ul>
+                                <div className="btn-projet">
+                                    <button>
+                                        <a href="https://cv-website-topaz.vercel.app/" target="_blank" rel="noreferrer">
+                                            Voir le site
+                                        </a>
+                                    </button>
+                                </div>                                
                             </div>
-                            <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
-                            <li>JavaScript</li>
-                            </div>
-                            <ul className='tasks'>
-                                <li>Elaboration d&apos;une maquette responsive.</li>
-                                <li>Développement du front</li>
-                                <li>Mise en ligne</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://cv-website-topaz.vercel.app/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
-                        </Overlay>
-                    )}     
-                </div>
-            </div>
-            
-            <div className='MB1' data-category="front">
-                <div className="card" id="MB1">
-                    <div className="intro">
-                        <h4>Mon CV en ligne - version 1</h4>
-                        <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
-                            <li>JavaScript</li>
-                    </div>
-                        <div className='btnPlus'>
-                            <button className="see-more-btn" onClick={() => setSelectedProject("MB1")}>
-                                +
-                            </button>
-                        </div>
 
-                        </div>
-                </div>
-                <div>
-                    {selectedProject === "MB1" && (
-                        <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Mon CV en ligne</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/MB1.png"
-                                    alt="CV1"
-                                    width={500}
-                                    height={100}
-                                />
-                            </div>
-                            <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
-                            <li>JavaScript</li>
-                            </div>
-                            <ul className='tasks'>
-                                <li>Elaboration d&apos;une maquette responsive.</li>
-                                <li>Développement du front</li>
-                                <li>Mise en ligne</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://cv-web-site-v1.vercel.app/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
                         </Overlay>
                     )}     
                 </div>
             </div>
 
-
-            <div className='QA' data-category="front">
+            <div className='QA'>
                 <div className="card" id="QA">
                     <div className="intro">
                         <h4>Quai Antique</h4>
                         <p>Site vitrine et de réservation pour un restaurant Fictif.</p>
                         <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
                             <li>React.js</li>
+                            <li>CSS</li>
                         </div>
                         <div className='btnPlus'>
                             <button className="see-more-btn" onClick={() => setSelectedProject("QA")}>
@@ -359,116 +329,41 @@ const Portfolio: React.FC = () => {
                 <div>
                     {selectedProject === "QA" && (
                         <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Quai Antique</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src="/img/Portfolio/QA.png"
-                                    alt="Quai Antique"
-                                    width={500}
-                                    height={100}
-                                />
+                            <div className="projet-card" ref={projectRef}>
+                                <h2>Quai Antique</h2>
+                                <div className='portfolio-img'>
+                                    <Image
+                                        src="/img/Portfolio/QA.png"
+                                        alt="Quai Antique"
+                                        width={500}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className='tags'>
+                                    <p>Création d’un site vitrine avec système de réservation pour un restaurant fictif, développé en React.js, avec pour objectif de proposer une expérience utilisateur moderne et intuitive. </p>
+                                    <li>React.js</li>
+                                    <li>CSS</li>
+                                </div>
+                                <ul className='tasks'>
+                                    <li>Elaboration d&apos;une maquette responsive.</li>
+                                    <li>Développement du front</li>
+                                    <li>Mise en place d’une page de réservation avec la possibilité de choisir une date sur un calendrier.</li>
+                                </ul>
+                                <div className="btn-projet">
+                                    <button>
+                                        <a href="https://quai-antique.vercel.app/" target="_blank" rel="noreferrer">
+                                            Voir le site
+                                        </a>
+                                    </button>
+                                </div>                                
                             </div>
-                            <div className='tags'>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>React.js</li>
-                            </div>
-                            <ul className='tasks'>
-                                <li>Elaboration d&apos;une maquette responsive.</li>
-                                <li>Développement du front</li>
-                                <li>Mise en place d’une page de réservation avec la possibilité de choisir une date sur un calendrier.</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://quai-antique.vercel.app/" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
+
                         </Overlay>
                     )}     
                 </div>
             </div>
 
-            {/* <div className='GVP' data-category="fullstack">
-                <div className="card" id="GVP">
-                    <div className="intro">
-                        <h4>Garage V. Parrot</h4>
-                        <p>Projet de fin de formation qui ma permis de voir tous les étapes d'un développement fullstack.</p>
-                        <div className='tags'>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
-                            <li>Symfony</li>
-                        </div>
-                        <button className="see-more-btn" onClick={() => setSelectedProject("GVP")}>
-                            +
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    {selectedProject === "GVP" && (
-                        <Overlay onClose={() => setSelectedProject(null)} disableBodyScroll>
-                            <h2>Garage V. Parrot</h2>
-                            <div className='portfolio-img'>
-                                <Image
-                                    src=""
-                                    alt="Quai Antique"
-                                    width={500}
-                                    height={100}
-                                />
-                            </div>
-                            <div className='tags'>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Bootstrap</li>
-                                <li>Symfony</li>
-                            </div>
-                            <ul className='tasks'>
-                                <li>Elaboration d'une maquette responsive selon un cahier de charge.</li>
-                                <li>Développement du front.</li>
-                                <li>Développement du back avec MySQL</li>
-                                <li>Création d'une interface administrative pour le compte admin et les comptes des employés</li>
-                                <li>Tests</li>
-                            </ul>
-                            <div className="btn-projet">
-                                <button>
-                                    <a href="https://github.com/Melb56/Garage_V_Parrot" target="_blank" rel="noreferrer">
-                                        Voir le site
-                                    </a>
-                                </button>
-                            </div>
-                        </Overlay>
-                    )}     
-                </div>
-            </div> */}
-
-
         </div>
-
-
-    
-
-
-
-    
-        
-
-
-                {/* <div className="filter-container">
-            <label>
-                <input type="checkbox" value="front" className="filter-checkbox" checked />Front
-                <span className="custom-checkbox"></span>
-            </label>
-            <label>
-                <input type="checkbox" value="back" className="filter-checkbox" checked />Back
-                <span className="custom-checkbox"></span>
-            </label>
-            <label>
-                <input type="checkbox" value="fullstack" className="filter-checkbox" checked />Fullstack
-                <span className="custom-checkbox"></span>
-            </label>
-        </div>  */}
 
     </section>
   );
