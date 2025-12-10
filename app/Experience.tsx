@@ -142,7 +142,7 @@ const Experience: React.FC = () => {
 
           <div className="container-pro transition duration-500 transform hover:scale-120 hover:shadow-xl">
             <h5>EF écoles de langue, LONDRES & SAN FRANCISCO</h5>
-            <p className="date">Septembre 2017 à mai 2019</p>
+            <p className="date">Septembre 2017 à mai 2018</p>
             <p className="diploma">Multiple Center Academic Year Diploma (obtenu)</p>
             <p>Cours intensif d&apos;anglais</p>
           </div>
