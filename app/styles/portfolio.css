@@ -53,8 +53,12 @@
     cursor: pointer;
 }
 
+.underline {
+     text-decoration: underline;
+}
+
 #Osteo {
-    background-image: url(/img/Portfolio/osteoCTLogo.png); 
+    background-image: url(/img/Portfolio/OsteoCTLogo.png); 
     background-size: contain;
     background-position: center; 
     background-repeat: no-repeat;   

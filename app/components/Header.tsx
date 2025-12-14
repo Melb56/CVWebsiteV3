@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
 
   return (
-    <nav ref={navbarRef} id="navbar" className={`fixed top-0 w-full transition-all duration-300 z-50 ${isScrolled ? 'h-10' : 'h-16'} flex justify-center items-center`}>
+    <nav ref={navbarRef} id="navbar" className={`fixed top-0 w-full transition-all duration-300 z-50  ${isScrolled ? 'h-10' : 'h-16'} flex justify-center items-center`}>
       <div className={`container mx-auto flex items-center justify-between h-full px-4 ${
     isScrolled
       ? 'bg-[rgba(165,204,255,0.7)]'

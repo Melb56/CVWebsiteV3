@@ -244,6 +244,16 @@ const Skills: React.FC = () => {
                 <p>Wordpress</p>
               </div>
             </div>
+            <div className='image'>
+              <Image
+                src="/img/Skills/webpack.svg"
+                alt="WP"
+                width={90}
+                height={90}/>
+              <div className='overlay'>
+                <p>Webpack</p>
+              </div>
+            </div>
           </div>
 
         </div>

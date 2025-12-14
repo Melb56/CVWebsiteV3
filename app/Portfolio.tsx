@@ -65,7 +65,7 @@ const Portfolio: React.FC = () => {
                                 </div>
                                 <ul className='tasks'>
                                     <li>Analyse des besoins</li>
-                                    <li>Elaboration d&apos;une maquette responsive</li>
+                                    <li>Elaboration d&apos;<a className='underline' href='https://www.figma.com/design/unclzaq7N7t51GR06aT9AX/Ost%C3%A9o-Locmi?node-id=0-1&t=3BpvS39eskpzNfqy-1' target="_blank" rel="noreferrer">une maquette responsive</a></li>
                                     <li>Personnalisation complète d&apos;un thème Wordpress</li>
                                     <li>Développement du front</li>
                                     <li>Gestion du contenu</li>
@@ -123,7 +123,7 @@ const Portfolio: React.FC = () => {
                                     <li>SASS</li>
                                 </div>
                                 <ul className='tasks'>
-                                    <li>Elaboration d&apos;une maquette responsive</li>
+                                    <li>Elaboration d&apos; <a className='underline' href="https://www.figma.com/design/CEDn8qU5gOYapVNEMlQn9F/Daily-Books?node-id=0-1&t=UavhPAybpTSbEqBM-1"  target="_blank" rel="noreferrer">une maquette responsive</a></li>
                                     <li>Developpement d&apos;une BD avec Prisma (MySQL)</li>
                                     <li>Installation d&apos;une authentification avec Nextauth.js</li>
                                     <li>Développement du front.</li>
@@ -179,7 +179,7 @@ const Portfolio: React.FC = () => {
                                 </div>
                                 <ul className='tasks'>
                                     <li>Analyse des besoins</li>
-                                    <li>Elaboration d&apos;une maquette responsive</li>
+                                    <li>Elaboration d&apos;<a className='underline' href="https://www.figma.com/design/QQpxkB5J5KtMltlSHoe7BQ/Flottibulle?node-id=0-1&t=FLw337mq1dkVfxzF-1"  target="_blank" rel="noreferrer">une maquette responsive</a></li>
                                     <li>Personnalisation complète d&apos;un thème Wordpress</li>
                                     <li>Développement du front</li>
                                     <li>Mise en ligne</li>
@@ -292,13 +292,13 @@ const Portfolio: React.FC = () => {
                                     <li>Bootstrap</li>
                                 </div>
                                 <ul className='tasks'>
-                                    <li>Elaboration d&apos;une maquette responsive.</li>
+                                    <li>Elaboration d&apos; <a className='underline' href="https://www.figma.com/design/QQpxkB5J5KtMltlSHoe7BQ/Flottibulle?node-id=0-1&t=FLw337mq1dkVfxzF-1"  target="_blank" rel="noreferrer">une maquette responsive</a></li>
                                     <li>Développement du front</li>
                                     <li>Mise en ligne</li>
                                 </ul>
                                 <div className="btn-projet">
                                     <button>
-                                        <a href="https://cv-website-topaz.vercel.app/" target="_blank" rel="noreferrer">
+                                        <a href="https://cv-website2.vercel.app/" target="_blank" rel="noreferrer">
                                             Voir le site
                                         </a>
                                     </button>
@@ -345,7 +345,7 @@ const Portfolio: React.FC = () => {
                                     <li>CSS</li>
                                 </div>
                                 <ul className='tasks'>
-                                    <li>Elaboration d&apos;une maquette responsive.</li>
+                                    <li>Elaboration d&apos;<a className='underline' href="https://www.figma.com/design/MDlhZCJ7jarNGHNH32tus3/Restaurant-Quai-Antique?node-id=1-3&t=8D3PL3AIUfBhDrwL-1"  target="_blank" rel="noreferrer">une maquette responsive</a>.</li>
                                     <li>Développement du front</li>
                                     <li>Mise en place d’une page de réservation avec la possibilité de choisir une date sur un calendrier.</li>
                                 </ul>
